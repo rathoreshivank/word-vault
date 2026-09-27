@@ -1,11 +1,3 @@
-// const PATTERNS = [
-//   /meaning of ([a-zA-Z]+)/i,
-//   /define ([a-zA-Z]+)/i,
-//   /what does ([a-zA-Z]+) mean/i,
-//   /([a-zA-Z]+) meaning/i,
-//   /([a-zA-Z]+) synonym/i
-// ];
-
 const PATTERNS = [
   /meaning of ([a-zA-Z\s]+?)(?:\s+in|\?|$)/i,
   /define ([a-zA-Z\s]+?)(?:\s+in|\?|$)/i,
