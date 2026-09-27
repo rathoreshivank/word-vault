@@ -1,9 +1,17 @@
+// const PATTERNS = [
+//   /meaning of ([a-zA-Z]+)/i,
+//   /define ([a-zA-Z]+)/i,
+//   /what does ([a-zA-Z]+) mean/i,
+//   /([a-zA-Z]+) meaning/i,
+//   /([a-zA-Z]+) synonym/i
+// ];
+
 const PATTERNS = [
-  /meaning of ([a-zA-Z]+)/i,
-  /define ([a-zA-Z]+)/i,
-  /what does ([a-zA-Z]+) mean/i,
-  /([a-zA-Z]+) meaning/i,
-  /([a-zA-Z]+) synonym/i
+  /meaning of ([a-zA-Z\s]+?)(?:\s+in|\?|$)/i,
+  /define ([a-zA-Z\s]+?)(?:\s+in|\?|$)/i,
+  /what does ([a-zA-Z\s]+?) mean/i,
+  /([a-zA-Z\s]+?) meaning/i,
+  /([a-zA-Z\s]+?) synonym/i
 ];
 
 // Fetch definition — tries Wiktionary first, falls back to dictionaryapi.dev
@@ -59,7 +67,7 @@ chrome.history.onVisited.addListener(async (historyItem) => {
   for (const pattern of PATTERNS) {
     const match = query.match(pattern);
     if (match) {
-      word = match[1].toLowerCase();
+      word = match[1].toLowerCase().trim();
       break;
     }
   }
