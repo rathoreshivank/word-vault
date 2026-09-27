@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Word Vault",
+  "version": "1.0",
+  "description": "Automatically saves words you look up meanings for on Google.",
+  "permissions": ["history", "storage"],
+  "host_permissions": ["https://api.dictionaryapi.dev/*", "https://en.wiktionary.org/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
