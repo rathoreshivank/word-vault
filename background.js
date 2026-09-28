@@ -79,7 +79,9 @@ chrome.history.onVisited.addListener(async (historyItem) => {
       word,
       partOfSpeech,
       definition,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      correct: 0,
+      wrong: 0
     });
 
     chrome.storage.local.set({ words });

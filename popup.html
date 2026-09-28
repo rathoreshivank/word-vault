@@ -13,12 +13,32 @@
     background: #FAFAF8;
     color: #1C1C1A;
   }
-  h3 {
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .top h3 {
+    margin: 0;
     font-size: 13px;
     font-weight: 600;
     color: #8B8B85;
     letter-spacing: 0.02em;
-    margin: 0 0 18px 0;
+  }
+  .review-link {
+    padding: 5px 12px;
+    border: 1px solid #4A5D52;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4A5D52;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .review-link:hover {
+    background: #4A5D52;
+    color: #fff;
   }
   ul { list-style: none; margin: 0; padding: 0; }
   li {
@@ -72,7 +92,10 @@
 </style>
 </head>
 <body>
-  <h3>Saved words</h3>
+  <div class="top">
+    <h3>Saved words</h3>
+    <a class="review-link" href="review.html" target="_blank">Review</a>
+  </div>
   <ul id="list"></ul>
   <script src="popup.js"></script>
 </body>
